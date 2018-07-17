@@ -1,7 +1,7 @@
 ## 简单工厂方法
 
 UML图：
-![Alt text](../../../../img/简单工厂模式UML.png)
+![Alt text](../../../../img/simpleFactoryMethodUML.png)
 
 图中左半部分成为产品类，由接口IProduct和实现类Product_A和Product_B组成
 
