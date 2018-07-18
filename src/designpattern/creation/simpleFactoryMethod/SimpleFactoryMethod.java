@@ -1,4 +1,4 @@
-package designpattern.creationpattern.simpleFactoryMethod;
+package designpattern.creation.simpleFactoryMethod;
 
 import java.util.Date;
 import java.util.Random;

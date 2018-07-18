@@ -1,4 +1,4 @@
-package designpattern.creationpattern.factorymethod;
+package designpattern.creation.factorymethod;
 
 /**
  *
