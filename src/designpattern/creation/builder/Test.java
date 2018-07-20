@@ -1,4 +1,4 @@
-package designpattern.creation.builderpattern;
+package designpattern.creation.builder;
 
 /**
  * Created by zzx on 2018/7/19.
