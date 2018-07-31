@@ -36,9 +36,9 @@ abstract class OperatorExpression implements AbstractExpression {
 }
 
 class AdditionExpression extends OperatorExpression {
-    public AdditionExpression(AbstractExpression _arithmeticExpression1,
-                              AbstractExpression _arithmeticExpression2) {
-        super(_arithmeticExpression1, _arithmeticExpression2);
+    public AdditionExpression(AbstractExpression arithmeticExpression1,
+                              AbstractExpression arithmeticExpression2) {
+        super(arithmeticExpression1, arithmeticExpression2);
     }
 
     @Override
