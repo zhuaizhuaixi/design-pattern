@@ -8,7 +8,7 @@ interface Prototype extends Cloneable {
     Prototype clone();
 }
 
-class ConcretePrototype implements Prototype, Cloneable {
+class ConcretePrototype implements Prototype {
     private String name;
     private String birthday;
 
@@ -23,7 +23,7 @@ class ConcretePrototype implements Prototype, Cloneable {
         try {
             p = (Prototype) super.clone();
         } catch (CloneNotSupportedException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return p;
     }
@@ -67,5 +67,8 @@ public class Test {
         System.out.println(prototype == fakePrototype);
         System.out.println(prototype.getClass() == fakePrototype.getClass());
         System.out.println(prototype.equals(fakePrototype));
+
+        ((ConcretePrototype) prototype).setBirthday("123");
+        System.out.println(((ConcretePrototype) prototype).getBirthday());
     }
 }

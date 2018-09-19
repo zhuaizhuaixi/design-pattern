@@ -16,13 +16,16 @@ class Singleton1 {
     private Singleton1() {
     }
 
-    public static Singleton1 getInsatance() {
+    public static Singleton1 getInstance() {
         return SingletonHolder.INSTANCE;
     }
 }
 
 public class StaticInnerClassTest {
     public static void main(String[] args) {
-        Singleton1 singleton = Singleton1.getInsatance();
+        Singleton1 singleton = Singleton1.getInstance();
+        Singleton1 singleton1 = Singleton1.getInstance();
+        System.out.println(singleton);
+        System.out.println(singleton1);
     }
 }
