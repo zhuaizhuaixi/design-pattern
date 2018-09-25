@@ -4,6 +4,7 @@ import org.w3c.dom.CDATASection;
 
 import java.lang.reflect.*;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
 
 /**
  * Created by zzx on 2018/7/24.
@@ -20,7 +21,7 @@ class DynamicProxyHandler implements InvocationHandler {
         System.out.println(object);
         System.out.println(proxy.getClass().getName());
         System.out.println(method);
-        System.out.println(args);
+        System.out.println(Arrays.toString(args));
         System.out.println("do before");
         Object result = method.invoke(object, args);
         System.out.println("do after");
@@ -34,7 +35,7 @@ public class DynamicProxyTest {
         System.out.println(Subject.class.getClassLoader());
         System.out.println(DynamicProxyHandler.class.getClassLoader());
         Subject proxy = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(),
-                new Class[]{Subject.class}, new DynamicProxyHandler(subject));
+                subject.getClass().getInterfaces(), new DynamicProxyHandler(subject));
         System.out.println(proxy.getClass().getName());
         proxy.request();
     }

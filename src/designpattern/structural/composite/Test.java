@@ -10,11 +10,11 @@ import java.util.List;
 interface IComponent {
     void operation();
 
-    void add(IComponent c) throws UnsupportedOperationException;
+    void add(IComponent c);
 
-    void remove(IComponent c) throws UnsupportedOperationException;
+    void remove(IComponent c);
 
-    IComponent getChild(int i) throws UnsupportedOperationException;
+    IComponent getChild(int i);
 }
 
 class Leaf implements IComponent {
@@ -82,7 +82,7 @@ class Component implements IComponent {
 }
 
 public class Test {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         IComponent component1 = new Component("1");
         component1.add(new Leaf("1"));
         component1.add(new Leaf("2"));

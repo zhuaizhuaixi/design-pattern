@@ -8,31 +8,37 @@ import java.util.HashMap;
 class FlyweightFactory {
     private static HashMap<Integer, Flyweight> flyweights = new HashMap<>();
 
-    public static Flyweight getFlyweight(int key) {
+    static Flyweight getFlyweight(int key) {
         Flyweight flyweight = flyweights.get(key);
         if (flyweight == null) {
-            if (key == 1) {
-                flyweight = new ConcreteFlyweight();
-            }
+            flyweight = new ConcreteFlyweight();
             flyweights.put(key, flyweight);
         }
         return flyweight;
     }
 }
 
-interface Flyweight{
+interface Flyweight {
+    /**
+     * 对对象外蕴状态进行赋值操作
+     *
+     * @param extrinsicState 外蕴状态
+     */
     void operation(int extrinsicState);
 
+    /**
+     * 显示对象内部信息
+     */
     void display();
 }
 
-class ConcreteFlyweight implements Flyweight{
+class ConcreteFlyweight implements Flyweight {
 
     private int intrinsicState;
 
     private int extrinsicState;
 
-    public ConcreteFlyweight() {
+    ConcreteFlyweight() {
         intrinsicState = 1;
         extrinsicState = 1;
     }
@@ -49,12 +55,19 @@ class ConcreteFlyweight implements Flyweight{
     }
 }
 
-
+/**
+ * @author zzx
+ */
 public class Test {
     public static void main(String[] args) {
         Flyweight flyweight = FlyweightFactory.getFlyweight(1);
         flyweight.display();
         flyweight.operation(123);
         flyweight.display();
+        Flyweight flyweight1 = FlyweightFactory.getFlyweight(1);
+        flyweight1.display();
+        Flyweight flyweight2 = FlyweightFactory.getFlyweight(2);
+        flyweight2.display();
+        System.out.println(flyweight == flyweight1);
     }
 }

@@ -18,8 +18,8 @@ class RealSubject implements Subject {
 class Proxy implements Subject {
     private Subject realSubject;
 
-    public Proxy(Subject rs) {
-        this.realSubject = rs;
+    public Proxy() {
+        this.realSubject = new RealSubject();
     }
 
     @Override
@@ -32,8 +32,7 @@ class Proxy implements Subject {
 
 public class StaticProxyTest {
     public static void main(String[] args) {
-        Subject subject = new RealSubject();
-        Subject proxy = new Proxy(subject);
+        Subject proxy = new Proxy();
         proxy.request();
     }
 }
