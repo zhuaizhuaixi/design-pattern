@@ -10,7 +10,7 @@ interface Strategy {
 class ConcreteStrategy1 implements Strategy {
     @Override
     public void execute(String str){
-        System.out.println("executing " + str + "in ConcreteStrategy1");
+        System.out.println("executing " + str + " in ConcreteStrategy1");
     }
 }
 

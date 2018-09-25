@@ -9,25 +9,25 @@ import java.util.List;
  */
 
 interface Aggregate<T> {
-    ConcreteIterator<T> createIterator();
+    Iterator<T> createIterator();
 
-    ConcreteAntiIterator<T> createAntiIterator();
+    Iterator<T> createAntiIterator();
 }
 
 class ConcreteAggregate<T> implements Aggregate<T> {
-    List<T> list = new ArrayList<>();
+    List<T> list;
 
     ConcreteAggregate(List<T> list) {
         this.list = list;
     }
 
     @Override
-    public ConcreteIterator<T> createIterator() {
+    public Iterator<T> createIterator() {
         return new ConcreteIterator<T>(this);
     }
 
     @Override
-    public ConcreteAntiIterator<T> createAntiIterator() {
+    public Iterator<T> createAntiIterator() {
         return new ConcreteAntiIterator<T>(this);
     }
 }

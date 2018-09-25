@@ -11,5 +11,5 @@ In my option, Command Pattern declares a set of command, Client can use these co
 命令模式的优点：
 1. 实现调用者和被调用者之间的解耦
 2. 很容易被扩展，只需新增一个ConcreteCommand即可
-3. 命令模式支持将多个命令装配成一个符合命令
+3. 命令模式支持将多个命令装配成一个复合命令
 4. 命令模式支持操作的取消和重做，只需要ConcreteCommand类存储额外的状态信息

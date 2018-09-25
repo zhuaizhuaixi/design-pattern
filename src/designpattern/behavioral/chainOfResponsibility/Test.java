@@ -11,7 +11,7 @@ interface Handler {
     /**
      * 取值方法
      */
-     Handler getSuccessor();
+    Handler getSuccessor();
 
     /**
      * 赋值方法，设置后继的责任对象
@@ -21,12 +21,13 @@ interface Handler {
 
 class ConcreteHandler implements Handler {
     private Handler successor;
+
     /**
      * 处理方法，调用此方法处理请求
      */
     @Override
     public void handleRequest() {
-        /**
+        /*
          * 判断是否有后继的责任对象
          * 如果有，就转发请求给后继的责任对象
          * 如果没有，则处理请求
