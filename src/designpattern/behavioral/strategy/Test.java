@@ -24,9 +24,7 @@ class ConcreteStrategy2 implements Strategy {
 public class Test {
     public static void main(String[] args) {
         String str = "main";
-        Strategy strategy1 = new ConcreteStrategy1();
-        Strategy strategy2 = new ConcreteStrategy2();
-        strategy1.execute(str);
-        strategy2.execute(str);
+        new ConcreteStrategy1().execute(str);
+        new ConcreteStrategy2().execute(str);
     }
 }

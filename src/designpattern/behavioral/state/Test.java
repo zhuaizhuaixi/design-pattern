@@ -7,13 +7,11 @@ package designpattern.behavioral.state;
 
 class Context {
 
-    private State state1;
-    private State state2;
+    private State state1 = new ConcreteState1();
+    private State state2 = new ConcreteState2();
     private State currentState;
 
     public Context() {
-        state1 = new ConcreteState1();
-        state2 = new ConcreteState2();
         currentState = this.state1;
     }
 
@@ -57,12 +55,6 @@ class ConcreteState2 implements State {
 public class Test {
     public static void main(String[] args) {
         Context context = new Context();
-        context.doAction();
-        context.changeState();
-        context.doAction();
-        context.changeState();
-        context.doAction();
-        context.changeState();
         context.doAction();
         context.changeState();
         context.doAction();

@@ -40,18 +40,25 @@ interface Observer {
     void update();
 }
 
-class ConcreteObserver implements Observer{
+class ConcreteObserver implements Observer {
+    private String observerState;
+
+    public ConcreteObserver(String observerState) {
+        this.observerState = observerState;
+    }
+
     @Override
     public void update() {
-        System.out.println("I am updated");
+        System.out.println(observerState + " updated to 777");
+        observerState = "777";
     }
 }
 
 public class Test {
     public static void main(String[] args) {
-        Observer observer1 = new ConcreteObserver();
-        Observer observer2 = new ConcreteObserver();
-        Observer observer3 = new ConcreteObserver();
+        Observer observer1 = new ConcreteObserver("observer 1");
+        Observer observer2 = new ConcreteObserver("observer 2");
+        Observer observer3 = new ConcreteObserver("observer 3");
         Subject subject = new ConcreteSubject();
         subject.attach(observer1);
         subject.attach(observer2);

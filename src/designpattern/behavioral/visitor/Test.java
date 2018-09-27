@@ -6,6 +6,7 @@ package designpattern.behavioral.visitor;
 
 interface Visitor {
     void visitElementA(ConcreteElementA cea);
+
     void visitElementB(ConcreteElementB ceb);
 }
 
@@ -14,6 +15,7 @@ class ConcreteVisitor implements Visitor {
     public void visitElementA(ConcreteElementA cea) {
         System.out.println("visiting element A");
     }
+
     @Override
     public void visitElementB(ConcreteElementB cea) {
         System.out.println("visiting element B");
@@ -41,10 +43,7 @@ class ConcreteElementB implements Element {
 public class Test {
     public static void main(String[] args) {
         Visitor visitor = new ConcreteVisitor();
-        Element elementA = new ConcreteElementA();
-        Element elementB = new ConcreteElementB();
-        //接受访问者的访问
-        elementA.accept(visitor);
-        elementB.accept(visitor);
+        new ConcreteElementA().accept(visitor);
+        new ConcreteElementB().accept(visitor);
     }
 }
